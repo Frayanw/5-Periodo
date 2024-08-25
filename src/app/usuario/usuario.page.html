@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let usuario of usuarios" [value]="usuario.cpf">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ usuario.nome }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p><strong>CPF:</strong> {{ usuario.cpf }}</p>
+        <p><strong>Telefone:</strong> {{ usuario.telefone }}</p>
+        <p><strong>Data de Nascimento:</strong> {{ usuario.dataNascimemto | date:'dd/MM/yyyy' }}</p>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
